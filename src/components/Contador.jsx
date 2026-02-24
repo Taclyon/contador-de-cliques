@@ -1,15 +1,9 @@
 import './Contador.css';
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 function Contador () {
-  const [count, setCount] = useState(() => {
-    const salvo = localStorage.getItem("count");
-    return salvo !== null ? Number(salvo) : 0
-  });
-
-    useEffect(()=>{
-        localStorage.setItem("count", count)
-    },[count])
+  const [count, setCount] = useState(0)
+  
 
   function incrementar(){
     setCount(prev => prev + 1)
@@ -19,14 +13,11 @@ function Contador () {
       <h1 className="counter-title">Contador</h1>
 
       <div className="counter-value">
-        {count >= 0 ? (
-          count
-        ) : 0}
-        
+        {count}       
         </div>
 
       <div className="counter-buttons">
-        <button onClick={(decrement) => setCount(decrement - 1)}>-</button>
+        <button disabled={(count === 0) ? true : false} onClick={()=>setCount(count-1)}>-</button>
         <button onClick={() => setCount(0)}>Reset</button>
         <button onClick={incrementar}>+</button>
       </div>
