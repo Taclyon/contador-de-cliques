@@ -1,64 +1,56 @@
-🧮 Contador con React
+🧮 Contador com React
 
-Este es un proyecto sencillo de contador hecho con React.
-El objetivo es practicar el uso de estado, hooks y localStorage.
+Este é um projeto simples de contador feito com React.  
+O objetivo é praticar o uso de estado, hooks e localStorage.
 
-📌 ¿Qué hace este proyecto?
+📌 O que este projeto faz?
 
-Muestra un número en pantalla
+- Mostra um número na tela  
+- Permite incrementar o contador  
+- Permite resetar o valor  
+- Salva o valor no localStorage para que não se perca ao recarregar a página  
 
-Permite incrementar el contador
+🛠️ Tecnologias usadas
 
-Permite resetear el valor
+- ⚛️ React  
+- 🪝 Hooks (useState, useEffect)  
+- 💾 localStorage  
+- 🎨 CSS básico  
 
-Guarda el valor en localStorage para que no se pierda al recargar la página
+🧠 O que eu pratiquei
 
-🛠️ Tecnologías usadas
+- Criar e usar estado com useState  
+- Atualizar o estado usando a forma funcional  
+- Usar useEffect para salvar dados  
+- Ler e escrever no localStorage  
+- Separar componentes  
 
-⚛️ React
+🔍 Exemplo de código importante
 
-🪝 Hooks (useState, useEffect)
+```javascript
+// const [count, setCount] = useState(() => {
+//   const saved = localStorage.getItem("count");
+//   return saved !== null ? Number(saved) : 0;
+// });
 
-💾 localStorage
+// useEffect(() => {
+//   localStorage.setItem("count", count);
+// }, [count]);
 
-🎨 CSS básico
+// ▶️ Como executar o projeto
 
+// Instale as dependências:
 
-🧠 Lo que practiqué
+// npm install
 
-Crear y usar estado con useState
+// Inicie o projeto:
 
-Actualizar el estado usando la forma funcional
+// npm run dev
 
-Usar useEffect para guardar datos
+// Abra no navegador:
 
-Leer y escribir en localStorage
+// http://localhost:5173
 
-Separar componentes
+// 👤 Autor
 
-🔍 Ejemplo de código importante
-const [count, setCount] = useState(() => {
-  const saved = localStorage.getItem("count");
-  return saved !== null ? Number(saved) : 0;
-});
-
-useEffect(() => {
-  localStorage.setItem("count", count);
-}, [count]);
-▶️ Cómo ejecutar el proyecto
-
-Instala las dependencias:
-
-npm install
-
-Inicia el proyecto:
-
-npm run dev
-
-Abre el navegador en:
-
-http://localhost:5173
-
-👤 Autor
-
-Tomas Antonio Cartaya Lyon
+// Tomas Antonio Cartaya Lyon
