@@ -1,10 +1,16 @@
 import './Contador.css';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function Contador () {
-  const [count, setCount] = useState(0)
-  
+  const [count, setCount] = useState(()=>{
+    const savedCount = localStorage.getItem('count')
 
+    return savedCount ? Number(savedCount) : 0
+  })
+  
+  useEffect(()=>{
+    localStorage.setItem('count',count)
+  },[count])
   function incrementar(){
     setCount(prev => prev + 1)
   }
